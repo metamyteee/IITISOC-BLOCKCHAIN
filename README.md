@@ -16,18 +16,16 @@ The goal is to help contributors understand the inner workings of blockchains su
 ## 📁 Project Structure
 
 IITISOC-BLOCKCHAIN/
-│
-├── blockchain/ # Blockchain logic (blocks, chain)
-├── crypto/ # Digital signature (Dilithium PQCrypto)
-├── tests/ # Unit tests
-├── transaction/ # Transaction logic
-├── wallet/ # Wallet functionality
-├── run.py # App entry point
-├── requirement.txt # Python dependencies
-└── README.md # This file
+ │
+ ├── blockchain/ # Blockchain logic (blocks, chain)
+ ├── crypto/ # Digital signature (Dilithium PQCrypto)
+ ├── tests/ # Unit tests
+ ├── transaction/ # Transaction logic
+ ├── wallet/ # Wallet functionality
+ ├── run.py # App entry point
+ ├── requirement.txt # Python dependencies
+ └── README.md # This file
 
-
----
 
 ## 🚀 Getting Started
 
@@ -53,6 +51,3 @@ pytest -v
 ### 4. now make the changes , and push the solution to your forked repo 
 
 ### 5. then just make a pr on main repo 
-
-
-
