@@ -35,7 +35,7 @@ Click the **Fork** button (top right of this page) to make a personal copy of th
 
 ### 2. Clone Your Fork
 
-form welcome page in vs code.
+from welcome page in vs code.
 
 ### set=up enviorment by following commands
 
