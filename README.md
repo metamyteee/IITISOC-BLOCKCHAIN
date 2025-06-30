@@ -6,7 +6,7 @@ This project is built for the IIT Indore Summer of Code (IITISOC) and is a light
 ## 🧠 Problem Statement
 
 Design and implement a simple yet functional blockchain system in Python.  
-The goal is to help contributors understand the inner workings of blockchains such as:
+we are using dilithium for singnature
 
 - Block & chain structures
 - Transaction validation
