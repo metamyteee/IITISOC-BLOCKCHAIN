@@ -35,14 +35,17 @@ Click the **Fork** button (top right of this page) to make a personal copy of th
 
 ### 2. Clone Your Fork
 
-form welcome oage in vs code.
+form welcome page in vs code.
+
+### set=up enviorment by following commands
 
 python -m venv venv
 source venv/bin/activate  # For Linux/macOS
 venv\Scripts\activate     # For Windows
 
 pip install -r requirement.txt
-### if any missing repo or basic repo , just install it as per that.
+
+### if any missing lib or basic lib , just install it as per that.
 
 ### 3. to run tests to ensure no issue is there while intergartion of the code
 run this command in vs codes terminal 
