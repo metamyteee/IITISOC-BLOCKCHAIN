@@ -15,16 +15,17 @@ The goal is to help contributors understand the inner workings of blockchains su
 
 ## 📁 Project Structure
 
+<pre>
 IITISOC-BLOCKCHAIN/
- │
- ├── blockchain/ # Blockchain logic (blocks, chain)
- ├── crypto/ # Digital signature (Dilithium PQCrypto)
- ├── tests/ # Unit tests
- ├── transaction/ # Transaction logic
- ├── wallet/ # Wallet functionality
- ├── run.py # App entry point
- ├── requirement.txt # Python dependencies
- └── README.md # This file
+├── blockchain/        # Blockchain logic (blocks, chain)
+├── crypto/            # Digital signatures (Dilithium, PQCrypto)
+├── tests/             # Unit tests
+├── transaction/       # Transaction logic
+├── wallet/            # Wallet functionality
+├── run.py             # App entry point
+├── requirements.txt   # Python dependencies
+└── README.md          # This file
+</pre>
 
 
 ## 🚀 Getting Started
