@@ -1,0 +1,12 @@
+{
+  "name": "blockchain-root",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"yarn backend\" \"yarn frontend\"",
+    "backend": "cd backend && python run.py",
+    "frontend": "cd quantum_blockchain && yarn start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
