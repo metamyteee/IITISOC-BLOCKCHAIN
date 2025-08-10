@@ -84,7 +84,7 @@ class Blockchain:
     def mine_block(self, miner_address: str) -> Dict[str, Any]:
         reward_transaction = {
             'sender': 'System',
-            'recipient': miner_address,
+            'recipient': "MinerWallet",
             'amount': self.mining_reward,
             'signature': 'mining_reward',
             'timestamp': str(datetime.datetime.now()),

@@ -9,7 +9,7 @@ function WalletManager() {
 
   const createWallet = async () => {
     if (!walletName.trim()) {
-      setError("Wallet name can't be empty.");
+      setError("⚠ Wallet name can't be empty.");
       return;
     }
 
@@ -36,21 +36,26 @@ function WalletManager() {
         value={walletName}
         onChange={(e) => {
           setWalletName(e.target.value);
-          setError(''); // clear error on typing
+          setError('');
         }}
         style={styles.input}
       />
 
       <button
         onClick={createWallet}
-        style={{ ...styles.button, backgroundColor: loading ? '#aaa' : '#1976d2' }}
+        style={{
+          ...styles.button,
+          background: loading
+            ? 'rgba(150,150,150,0.5)'
+            : 'linear-gradient(90deg, #00f2ff, #6f00ff)',
+        }}
         disabled={loading}
       >
-        {loading ? 'Creating...' : '🚀 Create Wallet'}
+        {loading ? '⏳ Creating...' : '🚀 Create Wallet'}
       </button>
 
       {walletAddress && (
-        <div style={{ ...styles.success, animation: 'fadeIn 0.6s ease-in-out' }}>
+        <div style={styles.success} className="fadeIn">
           ✅ Wallet Created:
           <br />
           <code>{walletAddress}</code>
@@ -59,11 +64,21 @@ function WalletManager() {
 
       {error && <div style={styles.error}>{error}</div>}
 
-      {/* Animation keyframe */}
       <style>{`
+        .fadeIn {
+          animation: fadeIn 0.6s ease-in-out;
+        }
         @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
+          from { opacity: 0; transform: translateY(8px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        input:focus {
+          border: 1px solid #6f00ff !important;
+          box-shadow: 0 0 8px rgba(111,0,255,0.5);
+        }
+        button:hover:not(:disabled) {
+          transform: scale(1.05);
+          box-shadow: 0 4px 15px rgba(111,0,255,0.4);
         }
       `}</style>
     </div>
@@ -73,18 +88,23 @@ function WalletManager() {
 const styles = {
   container: {
     padding: '2rem',
-    background: '#fff',
-    borderRadius: '10px',
+    borderRadius: '16px',
     maxWidth: '500px',
     margin: '2rem auto',
     textAlign: 'center',
-    boxShadow: '0 8px 20px rgba(0,0,0,0.08)',
-    fontFamily: `'Segoe UI', sans-serif`,
+    backdropFilter: 'blur(10px)',
+    background: 'rgba(255, 255, 255, 0.08)',
+    border: '1px solid rgba(255,255,255,0.2)',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
+    fontFamily: "'JetBrains Mono', monospace",
+    color: '#ffffffff',
   },
   title: {
     fontSize: '1.8rem',
     marginBottom: '1.5rem',
-    color: '#333',
+    background: 'linear-gradient(90deg, #00f2ff, #6f00ff)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
   },
   input: {
     padding: '0.75rem',
@@ -92,9 +112,11 @@ const styles = {
     fontSize: '1rem',
     marginBottom: '1rem',
     borderRadius: '6px',
-    border: '1px solid #ccc',
-    outline: 'none',
-    transition: 'border 0.2s ease',
+    border: '1px solid rgba(255,255,255,0.3)',
+    outline: '1px solid black',
+    background: 'rgba(255,255,255,0.05)',
+    color: '#6b6b6bff',
+    transition: 'all 0.2s ease',
   },
   button: {
     padding: '0.7rem 1.5rem',
@@ -103,24 +125,27 @@ const styles = {
     color: 'white',
     border: 'none',
     borderRadius: '6px',
-    transition: 'background-color 0.3s ease',
+    transition: 'all 0.3s ease',
+    fontFamily: "'JetBrains Mono', monospace",
   },
   success: {
     marginTop: '1.5rem',
-    backgroundColor: '#e1fbe1',
+    background: 'rgba(0,255,0,0.1)',
     padding: '1rem',
     borderRadius: '6px',
-    color: '#2e7d32',
+    color: '#7CFC00',
     fontWeight: '500',
     wordBreak: 'break-all',
+    border: '1px solid rgba(0,255,0,0.3)',
   },
   error: {
     marginTop: '1rem',
-    backgroundColor: '#ffe6e6',
+    background: 'rgba(255,0,0,0.1)',
     padding: '0.75rem',
     borderRadius: '6px',
-    color: '#d32f2f',
+    color: '#ff6b6b',
     fontWeight: '500',
+    border: '1px solid rgba(255,0,0,0.3)',
   },
 };
 

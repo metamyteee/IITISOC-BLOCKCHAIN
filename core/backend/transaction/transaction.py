@@ -26,7 +26,7 @@ class Transaction:
         'timestamp': self.timestamp,
         'transaction_id': self.transaction_id,
         'signature': self.signature,
-        'sender_public_key': self.sender_public_key  # ✅ this was missing
+        'sender_public_key': self.sender_public_key  
     }
 
 

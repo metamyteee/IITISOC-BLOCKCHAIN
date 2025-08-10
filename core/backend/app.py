@@ -7,10 +7,10 @@ import uuid
 import traceback
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for frontend access
+CORS(app) 
 
 blockchain = Blockchain()
-wallets = {}  # {wallet_name: (QuantumWallet, address)}
+wallets = {} 
 
 
 @app.route("/wallet/create", methods=["POST"])
@@ -40,8 +40,8 @@ def get_balance_by_name(wallet_name):
 @app.route("/transaction/send", methods=["POST"])
 def send_transaction():
     data = request.get_json()
-    sender_name = data.get("sender")       # Name, not address
-    recipient_name = data.get("recipient") # Name, not address
+    sender_name = data.get("sender")      
+    recipient_name = data.get("recipient") 
     amount = data.get("amount")
 
     if not all([sender_name, recipient_name, amount]):
@@ -83,7 +83,7 @@ def send_transaction():
 @app.route("/mine", methods=["POST"])
 def mine_block():
     data = request.get_json()
-    miner_name = data.get("miner_address")  # it's actually a name
+    miner_name = data.get("miner_address") 
 
     if not miner_name:
         return jsonify({"error": "Miner name required"}), 400
@@ -91,7 +91,7 @@ def mine_block():
     if miner_name not in wallets:
         return jsonify({"error": "Miner wallet not found"}), 404
 
-    _, miner_address = wallets[miner_name]  # extract real address
+    _, miner_address = wallets[miner_name]  
     block = blockchain.mine_block(miner_address)
     return jsonify(block)
 

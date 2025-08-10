@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px #ff00c1, -2px -2px #00fff7;
+  }
+  20% {
+    text-shadow: -2px 2px #ff00c1, 2px -2px #00fff7;
+  }
+  40% {
+    text-shadow: 2px -2px #ff00c1, -2px 2px #00fff7;
+  }
+  60% {
+    text-shadow: -1px -1px #ff00c1, 1px 1px #00fff7;
+  }
+  80% {
+    text-shadow: 1px 1px #ff00c1, -1px -1px #00fff7;
+  }
+  100% {
+    text-shadow: 2px 2px #ff00c1, -2px -2px #00fff7;
+  }
+}
